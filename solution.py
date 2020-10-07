@@ -41,7 +41,7 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
     # Send RCPT TO command and print server response.
     # Fill in start
    
-    clientSocket.send('RCPT TO:<xw2265@gmail.com\r\n'.encode())
+    clientSocket.send('RCPT TO:<xw2265@gmail.com>\r\n'.encode())
     recv3 = clientSocket.recv(1024).decode()
     #print(recv1)
     #if recv1[:3] != '250':
@@ -74,13 +74,13 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
     # Send QUIT command and get server response.
     # Fill in start
   
-    clientSocket.send('Quir\r\n'.encode())
+    clientSocket.send('QUIT\r\n'.encode())
     recv6 = clientSocket.recv(1024).decode()
     #print(recv1)
     #if recv1[:3] != '250':
        # print('quit 250 reply not received from server.')
     # Fill in end
-
+    pass
 
 if __name__ == '__main__':
     smtp_client(1025, '127.0.0.1')
